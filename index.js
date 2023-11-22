@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 app.get('/api/whoami', function (req, res) {
   let ip = req.ip.includes(':') ? req.ip.split(':').pop() : req.ip;
 
-  res.json({ipadress: ip});
+  res.json({ipadress: ip, language: req.get('Accept-Language'), software: req.get('User-Agent')});
 });
 
 // listen for requests :)
