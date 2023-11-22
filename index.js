@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 
 // your first API endpoint...
 app.get('/api/whoami', function (req, res) {
-  let ip = req.ip.includes(':') ? req.ip.split(':').pop() : ip;
+  let ip = req.ip.includes(':') ? req.ip.split(':').pop() : req.ip;
 
   res.json({ipadress: ip});
 });
